@@ -1,0 +1,60 @@
+<%- //include('../views/inc/header.ejs') %>
+
+<main class="main">
+      <div class="card-container">
+        <% homes.forEach(sellhome => { %>
+         
+        
+        <div class="card buy__house" data-id="<%= sellhome._id %>">
+          <div class="card__header">
+            <div class="card__picture">
+              <div class="card__picture-overlay">&nbsp;</div>
+              <img
+                src="/img/sellHouse/<%= sellhome.coverImage %>"
+                alt="Tour 1"
+                class="card__picture-img"
+              />
+            </div>
+
+            <h3 class="heading-tertirary">
+              <!-- <span><%= sellhome.title %></span> -->
+            </h3>
+          </div>
+
+          <div class="card__details">
+            <h4 class="card__sub-heading"><%= sellhome.title %></h4>
+            <p class="card__text">
+              <%= sellhome.location %>
+            </p>
+            <div class="card__data">
+              <svg class="card__icon">
+                <!-- <use xlink:href="img/icons.svg#icon-map-pin"></use> -->
+              </svg>
+              <span><%= sellhome.price%>Br</span>
+            </div>
+            <div class="card__data">
+              <svg class="card__icon">
+                <!-- <use xlink:href="img/icons.svg#icon-calendar"></use> -->
+              </svg>
+              <span>Area <%= sellhome.area %> msq</span>
+            </div>
+            <div class="card__data">
+              <svg class="card__icon">
+                <!-- <use xlink:href="img/icons.svg#icon-flag"></use> -->
+              </svg>
+              <span><%= sellhome.bedRooms %> Bed Rooms</span>
+            </div>
+            <div class="card__data">
+              <svg class="card__icon">
+                <!-- <use xlink:href="img/icons.svg#icon-user"></use> -->
+              </svg>
+              <span><%= sellhome.bathRooms %> Bath Rooms</span>
+            </div>
+          </div>
+
+        </div>
+        <% }) %>
+        </div>
+        </main>
+
+<%- include('./inc/footer.ejs') %>

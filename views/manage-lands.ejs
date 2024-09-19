@@ -1,0 +1,26 @@
+<div class="user-view__form-container">
+  <h2 class="heading-secondary ma-bt-md">Manage Rent land</h2>
+  <table class="user-table">
+    <thead>
+      <tr>
+        <th>Property Id</th>
+        <th>Property name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% land.forEach(land => { %>
+        <tr>
+          <td><%= land._id %></td>
+          <td><%= land.title %></td>
+          <td>
+            <a href="/admin/edit-land/<%= land.id %>" class="btn btn-danger" >Edit</a>
+            <form action="/admin/delete-land/<%= land.id %>" method="post" style="display:inline;">
+              <button type="submit" class="btn btn--green">Delete</button>
+            </form>
+          </td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+</div>

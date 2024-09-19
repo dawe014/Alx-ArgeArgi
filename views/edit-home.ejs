@@ -1,0 +1,74 @@
+<main class="view view_edit">
+    <div class="user-view"> 
+  <form method="POST" enctype="multipart/form-data" class="update_sell_home" id="form_edit">
+    <h2 class="heading-secondary ma-bt-md">Edit Sell Home</h2>
+    <div class="form__group">
+      <label class="form__label" for="title">Title</label>
+      <input id="title" class="form__input" type="text" value="<%= home.title %>" required name="title">
+      <input id="id" class="form__input" type="text" value="<%= home.id %>" required name="title" disabled style="display: none;">
+    </div>
+    <div class="form__group">
+      <label class="form__label" for="price">Price</label>
+      <input id="price" class="form__input" type="number" value="<%= home.price %>" required name="price">
+    </div>
+    <div class="form__group">
+      <label class="form__label" for="description">Description</label>
+      <textarea id="description" class="form__input" required name="description" cols="40" rows="5"><%= home.description %></textarea>
+    </div>
+    <div class="form__group">
+      <label class="form__label" for="area">Area</label>
+      <input id="area" class="form__input" type="number" value="<%= home.area %>" required name="area">
+    </div>
+    <div class="form__group">
+      <label class="form__label" for="location">Location</label>
+      <input id="location" class="form__input" type="text" value="<%= home.location %>" required name="location">
+    </div>
+    <div class="form__group">
+      <label class="form__label" for="address">Kebele</label>
+      <input id="kebele" class="form__input" type="text" value="<%= home.kebele %>" required name="kebele">
+    </div>
+    <div class="form__group">
+      <label class="form__label" for="city">City</label>
+      <input id="city" class="form__input" type="text" value="<%= home.city %>" required name="city">
+    </div>
+    <div class="form__group">
+      <label class="form__label" for="state">State</label>
+      <input id="state" class="form__input" type="text" value="<%= home.state %>" required name="state">
+    </div>
+    <div class="form__group">
+      <label class="form__label" for="bedRooms">Bedrooms</label>
+      <input id="bedRooms" class="form__input" type="number" value="<%= home.bedRooms %>" required name="bedRooms">
+    </div>
+    <div class="form__group">
+      <label class="form__label" for="bathRooms">Bathrooms</label>
+      <input id="bathRooms" class="form__input" type="number" value="<%= home.bathRooms %>" required name="bathRooms">
+    </div>
+    <div class="form__group form__photo-upload" >
+      <label class="form__label" for="coverImage">Cover Image</label>
+      
+      <img class="form__cover-photo" src="/img/sellHouse/<%= home.coverImage %>" alt="Cover photo">
+      <input id="coverImage" class="form__input" type="file" value="<%= home.coverImage %>"  name="coverImage">
+    </div>
+
+        <div class="form__group">
+      <label class="form__label" for="images">Images (comma separated)</label>
+      <input id="images" class="form__input" type="text" value="<%= home.images.join(', ') %>" required name="images">
+
+      <% home.images.forEach(function(image, index) { %>
+        <div class="image-container" id="image-<%= index %>">
+          <img class="form__cover-photo" src="/img/sellHouse/<%= image %>" alt="House image">
+          <button type="button" class="delete-button" data-home-id="<%= home._id %>" data-image-url="<%= image %>" data-index="<%= index %>">Delete</button>
+        </div>
+      <% }) %>
+      <label class="form__label" for="new-image">Add New Image</label>
+      <input id="new-image" type="file" accept="image/*">
+      <button type="button" data-image-id="<%= home._id %>" id="add-image-button">Add Image</button>
+    </div>
+    <div class="form__group right">
+      <button type="submit" class="btn btn--small btn--green">Update Home</button>
+    </div>
+  </form>
+</div>
+</main>
+
+    <script type="module" src="/js/update_details.js"></script>

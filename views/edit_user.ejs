@@ -1,0 +1,24 @@
+<main class="view">
+    <div class="user-view"> 
+  <form method="POST" enctype="multipart/form-data" class="update_user" id="form_edit">
+    <h2 class="heading-secondary ma-bt-md">Edit User</h2>
+    <div class="form__group">
+      <label class="form__label" for="title">Name</label>
+      <input id="name" class="form__input" type="text" value="<%= user.name %>" required name="name">
+      <input id="id" class="form__input" type="text" value="<%= user.id %>" required name="title" disabled style="display: none;">
+    </div>
+    <div class="form__group">
+      <label class="form__label" for="price">Phone</label>
+      <input id="phone" class="form__input" type="number" value="<%= user.phone %>" required name="phone">
+    </div>
+    <div class="form__group">
+      <label class="form__label" for="area">Role</label>
+      <input id="role" class="form__input" type="text" value="<%= user.role %>" required name="role">
+    </div>
+    <div class="form__group right">
+      <button type="submit" class="btn btn--small btn--green">Update User</button>
+    </div>
+  </form>
+</div>
+</main>
+    <script type="module" src="/js/update-user.js"></script>

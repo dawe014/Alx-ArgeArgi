@@ -28,7 +28,7 @@ router.patch(
   authController.protect,
   authController.updatePassword
 );
-// router.use(authController.protect);
+router.use(authController.protect);
 
 // Admin routes
 

@@ -1,0 +1,88 @@
+<% function navItem(link, text, icon, active) { %>
+  <li class="<%= active ? 'side-nav--active' : '' %>">
+    <a href="<%= link %>" class="nav-link" data-link="<%= link %>">
+      <svg>
+        <use xlink:href="img/icons.svg#icon-<%= icon %>"></use>
+      </svg>
+      <%= text %>
+    </a>
+  </li>
+<% } %>
+
+  <main class="view">
+    <button class="toggle-nav" id="toggleNav">☰ Menu</button>
+    <div class="user-view">
+      <nav class="user-view__menu">
+      <ul class="side-nav">
+        <%= navItem('/settings', 'Settings', 'settings', true) %>
+        <%= navItem('/my-posts', 'My posts', 'briefcase') %>
+      </ul>
+
+      <% if (user.role === 'admin') { %>
+        <div class="admin-nav">
+          <h5 class="admin-nav__heading">Admin</h5>
+          <ul class="side-nav">
+            <%= navItem('/admin/manage-users', 'Manage Users', 'users') %>
+            <%= navItem('/admin/manage-rent-home', 'Manage Rent Home', 'map') %>
+            <%= navItem('/admin/manage-sell-home', 'Manage Sell Home', 'star') %>
+            <%= navItem('/admin/manage-lands', 'Manage Lands', 'briefcase') %>
+          </ul>
+        </div>
+      <% } %>
+    </nav>
+
+      <div class="user-view__content">
+        <div class="user-view__form-container">
+          <h2 class="heading-secondary ma-bt-md">Your account settings</h2>
+          
+          <!-- WITHOUT API -->
+          <!-- <form class="form form-user-data" action="/submit-user-data" method="POST" enctype="multipart/form-data"> -->
+          
+          <!-- WITH API -->
+          <form  method="patch" class="form form-user-data" enctype="multipart/form-data">
+            <div class="form__group">
+              <label class="form__label" for="name">Name</label>
+              <input id="name" class="form__input" type="text" value="<%= user.name %>" required name="name">
+            </div>
+            <div class="form__group ma-bt-md">
+              <label class="form__label" for="email">Phone Number</label>
+              <input id="phone" class="form__input" type="phone" value="<%= user.phone %>" required name="phone">
+            </div>
+            <div class="form__group form__photo-upload">
+              <img class="form__user-photo" src="img/users/<%= user.photo %>" alt="User photo">
+              <input class="form__upload" type="file" accept="image/*" id="photo" name="photo">
+              <label for="photo">Choose new photo</label>
+            </div>
+              
+            <div class="form__group right">
+              <button type="submit" class="btn btn--small btn--green">Save settings</button>
+            </div>
+          </form>
+        </div>
+        
+        <div class="line">&nbsp;</div>
+        
+        <div class="user-view__form-container">
+          <h2 class="heading-secondary ma-bt-md">Password change</h2>
+          <form class="form form-user-password">
+            <div class="form__group">
+              <label class="form__label" for="password-current">Current password</label>
+              <input id="password-current" class="form__input" type="password" placeholder="••••••••" required minlength="6">
+            </div>
+            <div class="form__group">
+              <label class="form__label" for="password">New password</label>
+              <input id="password" class="form__input" type="password" placeholder="••••••••" required minlength="6">
+            </div>
+            <div class="form__group ma-bt-lg">
+              <label class="form__label" for="password-confirm">Confirm password</label>
+              <input id="password-confirm" class="form__input" type="password" placeholder="••••••••" required minlength="6">
+            </div>
+            <div class="form__group right">
+              <button class="btn btn--small btn--green btn--save-password">Save password</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </main>
+  <%- include('./inc/footer.ejs') %>

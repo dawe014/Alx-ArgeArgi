@@ -1,0 +1,35 @@
+
+<!-- <main class="view"> -->
+  <div class="user-view__form-container">
+
+  <!-- <div class="user-view__content">
+        <div class="user-view__form-container"> -->
+        <h2 class="heading-secondary">Manage Users</h2>
+        <table class="user-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% users.forEach(user => { %>
+                    <tr>
+                        <td><%= user.name %></td>
+                        <td><%= user.phone %></td>
+                        <td><%= user.role %></td>
+                        <td>
+                            <a href="/admin/edit-user/<%= user.id %>" class="btn btn-danger">Edit</a>
+                            <form action="/admin/delete-user/<%= user.id %>" method="post" style="display:inline;">
+                                <button type="submit" class="btn btn--green">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+      </div>
+  </div>
+    <!-- </main> -->

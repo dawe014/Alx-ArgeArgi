@@ -138,7 +138,7 @@ exports.logout = (req, res) => {
     httpOnly: true,
   });
   res.status(200).json({ status: "success" });
-  window.location.href = "/";
+  // window.location.href = "/";
 };
 
 exports.protect = catchAsync(async (req, res, next) => {
@@ -234,7 +234,7 @@ exports.isLoggedIn = async (req, res, next) => {
 
 exports.restrictTo = (...roles) => {
   return (req, res, next) => {
-    console.log(req.user);
+    console.log("Dawe role",roles, !roles.includes(req.user.role));
     if (!roles.includes(req.user.role)) {
       return next(
         new AppError("You do not have permission to perform this action", 403)

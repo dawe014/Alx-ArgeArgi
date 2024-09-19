@@ -1,0 +1,126 @@
+
+<%if (home) { %>
+  <div class="wrapper">
+<section class="images">
+<div class="container">
+        <% home.images.forEach((img) => { %>
+          <a href="/img/sellHouse/<%= img %>">
+                  <img  src="/img/sellHouse/<%= img %>" alt="The Park Camper home <%=  1 %>">
+                  </a>
+
+          <% }) %>
+        </div>
+ </section>
+ </div>
+  <section class="details">
+    <!-- <div class="wrapper">
+<section class="images">
+<div class="container">
+        <% home.images.forEach((img) => { %>
+          <a href="/img/sellHouse/<%= img %>">
+                  <img  src="/img/sellHouse/<%= img %>" alt="The Park Camper home <%=  1 %>">
+                  </a>
+
+          <% }) %>
+        </div>
+ </section>
+ </div> -->
+  <section class="section-header">
+  
+    <div class="description-box">
+      <h2 class="heading-secondary "> <%= home.title %></h2>
+      <h4 class="card__sub-heading">Location: <%= home.location  %></h2>
+        <h2 class="heading-secondary "> About Home:</h2>
+      <% const paragraphs = home.description.split('\n'); %>
+      <% paragraphs.forEach(p => { %>
+        <p class="description__text"><%= p %></p>
+      <% }) %>
+    </div>
+  </section>
+  <section class="buy_product">
+ <section class="section-cta">
+    <div class="cta">
+      <div class="cta__content">
+        <h2 class="heading-secondary title"><%= home.title %></h4>
+        <div class="card__details">
+            <p class="card__text">Location: 
+              <%= home.location %>
+            </p>
+            <p class="card__text">Area: 
+              <%= home.area %>m<sup>2</sup>
+            </p>
+            <p class="card__text">Bed Room/s: 
+              <%= home.bedRooms%> Bed rooms
+            </p>
+            <p class="card__text">Bath Room/s: 
+              <%= home.bathRooms%> Bath rooms
+            </p>
+            <p class="card__text">Price: 
+              <%= home.price%> Birr
+            </p>
+            </div>
+                    <h2 class="heading-secondary title">Phone: <%= home.user.phone %>0918344686</h4>
+          <button class="btn btn--green span-all-rows" id="book-home" data-home-id="<%= home._id %>">Call now!</button>
+      </div>
+    </div>
+  </section>
+  </section>
+  </section>
+
+  
+  <% }else if(land){ %>
+    <!-- FOR LAND -->
+
+
+<div class="slider section-pictures">
+    <div class="slides">
+      <% land.images.forEach((img, i) => { %>
+        <img class="picture-box__img " src="/img/land/<%= img %>" alt="The land <%= i + 1 %>">
+    <% }) %>
+      
+    </div>
+    <button class="prev" onclick="prevSlide()">&#10094;</button>
+    <button class="next" onclick="nextSlide()">&#10095;</button>
+  </div>
+  <section class="details">
+    
+  <section class="section-header">
+  
+    <div class="description-box">
+      <h2 class="heading-secondary "> <%= land.title %></h2>
+      <h4 class="card__sub-heading">Location: <%= land.location  %></h2>
+        <h2 class="heading-secondary "> About Land:</h2>
+      <% const paragraphs = land.description.split('\n'); %>
+      <% paragraphs.forEach(p => { %>
+        <p class="description__text"><%= p %></p>
+      <% }) %>
+    </div>
+  </section>
+  <section class="buy_product">
+ <section class="section-cta">
+    <div class="cta">
+      <div class="cta__content">
+        <h2 class="heading-secondary title"><%= land.title %></h4>
+        <div class="card__details">
+            <p class="card__text">Location: 
+              <%= land.location %>
+            </p>
+            <p class="card__text">Area: 
+              <%= land.area %>m<sup>2</sup>
+            </p>
+            
+        <p class="card__text">Price: 
+              <%= land.price%> Birr
+            </p>
+            </div>
+                    <h2 class="heading-secondary title">Phone: <%= home.user.phone %>0918344686</h4>
+
+          <button class="btn btn--green span-all-rows" id="book-home" data-home-id="<%= home._id %>">Call now!</button>
+      </div>
+    </div>
+  </section>
+  </section>
+  </section>
+
+  <% } %>
+<%- include('./inc/footer.ejs') %>

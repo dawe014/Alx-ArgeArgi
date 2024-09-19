@@ -1,0 +1,77 @@
+<main class="view">
+    <div class="user-view"> 
+  <form method="POST" enctype="multipart/form-data" id="add_asset" class="form_edit">
+    <h2 class="heading-secondary ma-bt-md">Qabeenyaa kee beeksifadhu!</h2>
+    <h2 class="heading-secondary ma-bt-md">Advertise your asset!</h2>
+    <div class="form__group-select">
+  <label class="form__label" for="table_select">* Filadhu / Select</label>
+  <select id="table_select" class="form__input" name="table_select" required onchange="handleSelectionChange()" >
+    <option value="">Maal beeksisuu barbaadda?</option>
+    <option value="sellhouse">Mana gurguruuf / To sell home</option>
+    <option value="renthouse">Mana kireessuuf / To rent home</option>
+    <option value="land">Lafa / land</option>
+  </select>
+</div>
+    <div class="form__group form__group--renthouse form__group--sellhouse form__group--land ">
+      <label class="form__label" for="title">* Mata duree / Title</label>
+      <input id="title" class="form__input" type="text" required placeholder="Maqaa isaa" name="title">
+      
+    </div>
+    <div class="form__group form__group--renthouse form__group--sellhouse form__group--land ">
+      <label class="form__label" for="id">User Id</label>
+      <input id="id" class="form__input" type="text" value="<%= user._id %>" required placeholder="Maqaa isaa" hidden name="id">
+      
+    </div>
+    <div class="form__group form__group--renthouse form__group--sellhouse form__group--land " >
+      <label class="form__label" for="price">* Gatii / Price</label>
+      <input id="price" class="form__input" type="number" required name="price">
+    </div>
+    <div class="form__group form__group--land form__group--sellhouse" >
+      <label class="form__label" for="area">* kaaree isaa / Kare meter </label>
+      <input id="area" class="form__input" type="number" placeholder="200" name="area">
+    </div>
+    <div class="form__group form__group--renthouse form__group--sellhouse" >
+      <label class="form__label" for="bedrooms">* Gola siree / Bed room </label>
+      <input id="bedrooms" class="form__input" type="number" placeholder="2" name="bedrooms">
+    </div>
+    <div class="form__group form__group--renthouse form__group--sellhouse" >
+      <label class="form__label" for="bathrooms">* Gola dhiqannaa / Bath Room</label>
+      <input id="bathrooms" class="form__input" type="number" placeholder="1" name="bathrooms">
+    </div>
+    <div class="form__group form__group--renthouse ">
+      <label class="form__label" for="category">* Gosa isa / Category</label>
+      <input id="category" class="form__input" type="text" placeholder="kutaa tokko / One room" name="category">
+    </div>
+    <div class="form__group form__group form__group--renthouse form__group--sellhouse form__group--land ">
+      <label class="form__label" for="description">* Ibsa / Description</label>
+      <textarea id="description" class="form__input" required name="description" cols="40" rows="5"></textarea>
+    </div>
+    <div class="form__group form__group form__group--renthouse form__group--sellhouse form__group--land ">
+      <label class="form__label" for="kebele">* Ganda / Kebele</label>
+      <input id="kebele" class="form__input" type="text" required placeholder="02" name="kebele">
+    </div>
+    <div class="form__group form__group form__group--renthouse form__group--sellhouse form__group--land ">
+      <label class="form__label" for="city">* Magaalaa / City</label>
+      <input id="city" class="form__input" type="text" required placeholder="Nekemte" name="city">
+    </div>
+    <div class="form__group form__group form__group--renthouse form__group--sellhouse form__group--land ">
+      <label class="form__label" for="state">* Naannoo / State</label>
+      <input id="state" class="form__input" type="text" placeholder="Oromia" name="state">
+    </div>
+    <div class="form__group form__photo-upload form__group form__group--renthouse form__group--sellhouse form__group--land " >
+      <label class="form__label" for="coverImage">* Cover Image</label>
+      <input id="coverImage" class="form__input" type="file" name="coverImage">
+    </div>
+
+      <div class="form__group form__group--renthouse form__group--sellhouse form__group--land">
+    <label class="form__label" for="images">* Suura / Images</label>
+    <input id="images" class="form__input" type="file" accept="image/*" required name="images" multiple>
+</div>
+    <div class="form__group right form__group form__group--renthouse form__group--sellhouse form__group--land">
+      <button type="submit" class="btn btn--small btn--green">Beeksisi / Post</button>
+    </div>
+  </form>
+</div>
+</main>
+
+    <script type="module" src="/js/advertise.js"></script>

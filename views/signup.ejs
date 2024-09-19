@@ -1,0 +1,23 @@
+<!-- <main class="index"> -->
+<div id="signupModal" class="modal">
+  <div class="login-form">
+    <h2 class="heading-secondary ma-bt-lg">Log in or Sign Up</h2>
+    <form   class="form form--signup" id="form--signup">
+      <label class="form__label" for="name">Full name:</label>
+      <input class="form__input" type="text" id="name" name="name" required>
+      <label class="form__label" for="phone">Phone:</label>
+      <input class="form__input" type="number" id="phone" name="phone" required>
+      <label class="form__label" for="password">Password:</label>
+      <input class="form__input" type="password" id="password" name="password" required minlength="6">
+      <label class="form__label" for="passwordConfirm">Confirm password:</label>
+      <input class="form__input" type="password" id="passwordConfirm" name="passwordConfirm" required minlength="6">
+      <button type="submit">Sign Up</button>
+      <div class="other">
+        <p>Do you have an account?</p>
+        <a href="/login">Login</a>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- </main> -->
+<%- include('./inc/footer.ejs') %>

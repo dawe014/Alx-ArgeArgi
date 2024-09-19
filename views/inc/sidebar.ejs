@@ -1,0 +1,32 @@
+<% function navItem(link, text, icon, active) { %>
+  <li class="<%= active ? 'side-nav--active' : '' %>">
+    <a href="<%= link %>">
+      <svg>
+        <use xlink:href="img/icons.svg#icon-<%= icon %>"></use>
+      </svg>
+      <%= text %>
+    </a>
+  </li>
+<% } %>
+
+  <main class="view">
+    <div class="user-view">
+      <nav class="user-view__menu">
+  <ul class="side-nav">
+    <%= navItem('#', 'Settings', 'settings', true) %>
+    <%= navItem('/my-posts', 'My posts', 'briefcase') %>
+  </ul>
+
+  <% if (user.role === 'admin') { %>
+    <div class="admin-nav">
+      <h5 class="admin-nav__heading">Admin</h5>
+      <ul class="side-nav">
+        <%= navItem('/admin/manage-users', 'Manage Users', 'users') %>
+        <%= navItem('/admin/manage-buy-home', 'Manage Buy Home', 'map') %>
+        <%= navItem('/admin/manage-sell-home', 'Manage Sell Home', 'star') %>
+        <%= navItem('/admin/manage-lands', 'Manage Lands', 'briefcase') %>
+        <%= navItem('/admin/manage-furnitures', 'Manage Furnitures', 'briefcase') %>
+      </ul>
+    </div>
+  <% } %>
+</nav>

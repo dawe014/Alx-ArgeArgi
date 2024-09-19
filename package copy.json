@@ -1,0 +1,48 @@
+{
+  "name": "arge-argi",
+  "version": "1.0.0",
+  "main": "hello.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "server.js",
+    "dev": "nodemon server.js",
+    "prod": "NODE_ENV=production nodemon server.js",
+    "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundler.js",
+    "build:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundler.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dawe014/arge-argi.git"
+  },
+  "keywords": [],
+  "author": "dawe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dawe014/arge-argi/issues"
+  },
+  "homepage": "https://github.com/dawe014/arge-argi#readme",
+  "description": "",
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "axios": "^1.7.3",
+    "bcryptjs": "^2.4.3",
+    "connect-mongo": "^5.1.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.18.0",
+    "jsonwebtoken": "^9.0.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.5.1",
+    "multer": "^1.4.5-lts.1",
+    "pug": "^3.0.3",
+    "sharp": "^0.33.4",
+    "slugify": "^1.6.6",
+    "validator": "^13.12.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}
