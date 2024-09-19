@@ -9,17 +9,15 @@ Welcome to **Argeargi**! This website allows homeowners to easily list their pro
 - [Getting Started](#getting-started)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 
 ## Features
 
 - **User-Friendly Interface**: Intuitive design for easy navigation.
 - **Property Listings**: Homeowners can list their properties with detailed descriptions and images.
-- **Search Functionality**: Users can filter properties by location, price, and type (buy/rent).
 - **Favorites**: Users can save properties to their favorites for quick access.
 - **Responsive Design**: Optimized for both desktop and mobile devices.
-- **User Accounts**: Homeowners and users can create accounts to manage listings and inquiries.
+- **User Accounts**: Homeowners can create accounts to manage listings and inquiries.
 
 ## Technologies Used
 
@@ -27,15 +25,14 @@ Welcome to **Argeargi**! This website allows homeowners to easily list their pro
 - **Backend**: Node.js, Express
 - **Database**: MongoDB
 - **Authentication**: JWT (JSON Web Tokens)
-- **Deployment**: Heroku or Vercel
-
+  
 ## Getting Started
 
 To get started with **Argeargi**, follow these steps:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/argeargi.git
+   git clone https://github.com/dawe014/Alx-ArgeArgi.git
    cd argeargi
    ```
 
@@ -56,7 +53,7 @@ To get started with **Argeargi**, follow these steps:
    npm start
    ```
 
-5. Open your browser and navigate to `http://localhost:3000`.
+5. Open your browser and navigate to `http://localhost:4000`.
 
 ## Usage
 
@@ -73,15 +70,12 @@ We welcome contributions! To contribute to **Argeargi**:
 4. Push to the branch (`git push origin feature/YourFeature`).
 5. Create a pull request.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
 For questions or feedback, please reach out:
 
-- **Email**: your.email@example.com
-- **GitHub**: [yourusername](https://github.com/yourusername)
+- **Email**: dawittamiru014@gmail.com
+- **GitHub**: dawe014.(https://github.com/yourusername)
 
-Thank you for checking out **Argeargi**! We hope you find it useful for your property needs.
+Thank you for checking out **ArgeArgi**! We hope you find it useful for your property needs.
