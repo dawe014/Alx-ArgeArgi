@@ -76,6 +76,6 @@ We welcome contributions! To contribute to **Argeargi**:
 For questions or feedback, please reach out:
 
 - **Email**: dawittamiru014@gmail.com
-- **GitHub**: dawe014.(https://github.com/yourusername)
+- **GitHub**: dawe014.(https://github.com/dawe014)
 
 Thank you for checking out **ArgeArgi**! We hope you find it useful for your property needs.
