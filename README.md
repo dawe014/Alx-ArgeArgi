@@ -33,7 +33,7 @@ To get started with **Argeargi**, follow these steps:
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/dawe014/Alx-ArgeArgi.git
-   cd argeargi
+   cd ArgeArgi
    ```
 
 2. **Install Dependencies**:
@@ -62,7 +62,7 @@ To get started with **Argeargi**, follow these steps:
 
 ## Contributing
 
-We welcome contributions! To contribute to **Argeargi**:
+We welcome contributions! To contribute to **ArgeArgi**:
 
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature/YourFeature`).
