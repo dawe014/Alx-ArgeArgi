@@ -116,12 +116,19 @@ const logout = async () => {
       method: "GET",
       url: "/api/v1/users/logout",
     });
-    // window.location.href = "/buyhouse";
-    // console.log(res.data);
-
-    // if ((res.data.status = "success"))
+    console.log(res)
+    if (res.data.status === "success") {
+      showAlert("success", "Logged out successfully!");
+      window.setTimeout(() => {
+        location.assign("/");
+      }, 1500);
+    }
   } catch (err) {
     console.log(err.response);
     showAlert("error", "Error logging out! Try again.");
   }
 };
+
+function yourlogout() {
+  logout()
+}

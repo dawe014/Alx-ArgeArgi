@@ -5,20 +5,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const id = card.getAttribute("data-id");
       console.log("dawe================");
 
-      alert(`dawe users id can be gotten  ${id}`);
       window.location.href = `/details/${id}`;
     });
-  }); // const form_login = document.getElementById("buy__house");
-  // if (form_login) {
-  //   form_login.addEventListener("click", (e) => {
-  //     e.preventDefault();
-
-  //     console.log("dawe================");
-
-  //     alert("dawe users id can be gotten");
-  //     window.location.href = `/home-details`;
-  //   });
-  // }
+  }); 
 });
 
 const slides = document.querySelectorAll(".slides img");

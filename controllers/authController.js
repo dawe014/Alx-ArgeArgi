@@ -86,59 +86,13 @@ exports.login = catchAsync(async (req, res, next) => {
   createSendToken(user, 200, res);
 });
 
-// Protect routes (middleware)
-// exports.protect = catchAsync(async (req, res, next) => {
-//   // 1) Getting token and check if it's there
-//   let token;
-//   if (
-//     req.headers.authorization &&
-//     req.headers.authorization.startsWith("Bearer")
-//   ) {
-//     token = req.headers.authorization.split(" ")[1];
-//   } else if (req.cookies.jwt) {
-//     token = req.cookies.jwt;
-//   }
-//   console.log('Hello from protect');
-
-//   if (!token) {
-//     return next(
-//       new AppError("You are not logged in! Please log in to get access.", 401)
-//     );
-//   }
-
-//   // 2) Verification token
-//   const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
-
-//   // 3) Check if user still exists
-//   const currentUser = await User.findById(decoded.id);
-//   if (!currentUser) {
-//     return next(
-//       new AppError(
-//         "The user belonging to this token does no longer exist.",
-//         401
-//       )
-//     );
-//   }
-
-//   // 4) Check if user changed password after the token was issued
-//   if (currentUser.changedPasswordAfter(decoded.iat)) {
-//     return next(
-//       new AppError("User recently changed password! Please log in again.", 401)
-//     );
-//   }
-
-//   // GRANT ACCESS TO PROTECTED ROUTE
-//   req.user = currentUser;
-//   next();
-// });
-
 exports.logout = (req, res) => {
   res.cookie("jwt", "loggedout", {
-    expires: new Date(Date.now() + 10 * 1000),
+    expires: new Date(Date.now() + 1 * 1000),
     httpOnly: true,
   });
-  res.status(200).json({ status: "success" });
   // window.location.href = "/";
+  res.status(200).json({ status: "success" });
 };
 
 exports.protect = catchAsync(async (req, res, next) => {
@@ -234,7 +188,6 @@ exports.isLoggedIn = async (req, res, next) => {
 
 exports.restrictTo = (...roles) => {
   return (req, res, next) => {
-    console.log("Dawe role",roles, !roles.includes(req.user.role));
     if (!roles.includes(req.user.role)) {
       return next(
         new AppError("You do not have permission to perform this action", 403)

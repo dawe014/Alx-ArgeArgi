@@ -36,9 +36,6 @@ app.use((req, res, next) => {
 });
 app.use(express.urlencoded({ extended: true }));
 
-// router.use(authController.isLoggedIn);
-console.log('dawe kun app.js keessa')
-
 // Use the main routes
 app.use("/", main); // Updated to use the main router
 app.use("/api/v1/land", landRouter);
@@ -46,9 +43,6 @@ app.use("/api/v1/users", userRouter);
 app.use("/api/v1/sellhouse", sellHouseRouter);
 app.use("/api/v1/renthouse", rentHouseRouter);
 app.use("/api/v1/furniture", furnitureRouter);
-// console.log("dawe kun app.js dhuma isaa");
-
-// console.log('dawe')
 
 app.all("*", (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));

@@ -1,11 +1,9 @@
-// express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 
 dotenv.config({ path: "./.env" });
 const app = require("./app");
 
-// console.log(process.env)
 const DB = process.env.DATABASE;
 // console.log(DB,'\n');
 /**
