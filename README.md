@@ -33,7 +33,7 @@ To get started with **Argeargi**, follow these steps:
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/dawe014/Alx-ArgeArgi.git
-   cd ArgeArgi
+   cd Alx-ArgeArgi
    ```
 
 2. **Install Dependencies**:
@@ -50,7 +50,7 @@ To get started with **Argeargi**, follow these steps:
 
 4. **Start the Development Server**:
    ```bash
-   npm start
+   npm run dev
    ```
 
 5. Open your browser and navigate to `http://localhost:4000`.
